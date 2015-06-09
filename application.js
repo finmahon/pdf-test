@@ -24,8 +24,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(mbaasExpress.fhmiddleware());
 
 // fhlint-begin: custom-routes
-var PDF = require('./lib/mpdf.js').mPDF;
-new PDF(app);
+var Service = require('./lib/services.js').Services;
+app.get('/api/pdf', Service.info);
+app.post('/api/pdf', Service.PDF);
 
 // fhlint-end
 
