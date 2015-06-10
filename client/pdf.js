@@ -3,9 +3,8 @@ var fs = require('fs');
 var qstr = require('querystring');
 var Buffer = require('buffer').Buffer;
 
-var PDFCli = function(_hostName, _port) {
-    this.hostName = _hostName;
-    this.port = _port;
+var PDFCli = function(_options) {
+    var opt = _options;
     var rest = {};
     rest.pdf = '/api/pdf';
     rest.html = '/api/html';
@@ -14,8 +13,8 @@ var PDFCli = function(_hostName, _port) {
     var _download = function(data, cb, api) {
         var chunks = [];
         var options = {
-            hostname: this.hostName || '127.0.0.1',
-            port: this.port || 8001,
+            hostname: opt.host || '127.0.0.1',
+            port: opt.port || 8001,
             path: api,
             method: 'POST',
             headers: {

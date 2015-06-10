@@ -2,9 +2,13 @@ var expect = require('expect.js')
 var pdf = require('../client/pdf')
 var fs = require('fs');
 
+//var url = { host: '127.0.0.1', port:3000 }
+var url = {host: 'mbs-dte-2xwnt4xuvkzok77yafphbxo5-dev.ac.gen.nrm.feedhenry.com', port: 80}
+
+
 describe('express rest api server', function() {
     it('importing', function() {
-        var client = new pdf();
+        var client = new pdf(url);
         expect(client).to.be.an('object');
     });
 
@@ -15,7 +19,7 @@ describe('express rest api server', function() {
 
     it('testing client downloading PDF', function(done) {
         this.timeout(35000);
-        var client = new pdf();
+        var client = new pdf(url);
         expect(client).to.be.an('object');
 
         var file = fs.createWriteStream('redirection.pdf');
@@ -32,7 +36,7 @@ describe('express rest api server', function() {
 
     it('testing fromHTML', function(done) {
         this.timeout(35000);
-        var client = new pdf();
+        var client = new pdf(url);
         expect(client).to.be.an('object');
 
         var html = fs.readFileSync('./test.html').toString();

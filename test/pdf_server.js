@@ -2,29 +2,29 @@ var superagent = require('superagent')
 var expect = require('expect.js')
 
 describe('express rest api server', function() {
-    var id
+    var id;
+    var url = 'http://127.0.0.1:3000';
 
     it('bad post data should return an error', function(done) {
-        superagent.post('http://localhost:8001/api/pdf')
+        superagent.post(url + '/api/pdf')
             .send({
                 name: 'John',
                 email: 'john@rpjs.co'
             })
             .end(function(e, res) {
+                expect(res.body.msg).to.not.empty;
                 expect(e).to.eql(null);
-                expect(res.body.msg).to.eql('usage: type: POST  url: /api/pdf  param {urlName:url where your html page is?, pdf: name of the generated pdf }');
                 done();
             });
     });
 
     it('generating pdf', function(done) {
-        superagent.post('http://localhost:8001/api/pdf')
+        superagent.post(url + '/api/pdf')
             .send({
                 html: 'http://www.google.es',
                 pdf: 'google.pdf'
             })
             .end(function(e, res) {
-                console.log(res);
                 console.log(res.file, res.body.name);
                 console.log('error->', e);
                 done();
