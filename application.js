@@ -2,7 +2,6 @@ var mbaasApi = require('fh-mbaas-api');
 var express = require('express');
 var mbaasExpress = mbaasApi.mbaasExpress();
 var cors = require('cors');
-
 // list the endpoints which you want to make securable here
 var securableEndpoints;
 // fhlint-begin: securable-endpoints
@@ -25,7 +24,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(mbaasExpress.fhmiddleware());
 
 // fhlint-begin: custom-routes
-app.use('/hello', require('./lib/hello.js')());
+var PDF = require('./lib/mpdf.js').mPDF;
+new PDF(app);
+
 // fhlint-end
 
 // Important that this is last!
