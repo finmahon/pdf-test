@@ -37,7 +37,7 @@ describe('express rest api server', function() {
 
         var html = fs.readFileSync('./test.html').toString();
         var file = fs.createWriteStream('mypdf.pdf');
-        client.fromHTML(html, function(res) {
+        client.fromHTML({html:html, host:'http://getbootstrap.com/examples/offcanvas/'}, function(res) {
             file.write(res.data);
             file.end();
 
