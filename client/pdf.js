@@ -60,9 +60,10 @@ var PDFCli = function(_hostName, _port) {
             _download(postData, cb, rest.pdf);
         },
 
-        fromHTML: function(html, cb) {
+        fromHTML: function(opt, cb) {
             var postData = qstr.stringify({
-                html: html,
+                html: opt.html,
+                host: opt.host,
                 pdf: 'html_pdf.pdf'
             });
             _download(postData, cb, rest.html);
