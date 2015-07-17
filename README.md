@@ -1,25 +1,35 @@
-# FeedHenry Hello World MBaaS Server
+# PDF Service
 
-This is a blank 'hello world' FeedHenry MBaaS. Use it as a starting point for building your APIs. 
+This service is build using nodejs and Phantomjs, provide a easy way to transform HTML to PDF. 
 
-# Group Hello World API
+## Features
 
-# hello [/hello]
+__&#8226; Page capture:__
+You can capture a complete webpage into a PDF. 
 
-'Hello world' endpoint.
+__&#8226; HTML to PDF:__
+Transform styled HTML into PDF. 
 
-## hello [POST] 
+__&#8226; HTML/CSS to PDF:__
+Transform HMTL styled using CSS files to PDF.
 
-'Hello world' endpoint.
+#Design
 
-+ Request (application/json)
-    + Body
-            {
-              "hello": "world"
-            }
 
-+ Response 200 (application/json)
-    + Body
-            {
-              "msg": "Hello world"
-            }
+
+
+####Modules
+
+* __PhantomJS__ 
+This is a headless Webkit engine that provide the HTML/PDF rendering.
+
+* __Cheerio__ 
+Provide DOM manipulation in server side. 
+
+* __Service__
+This module provide the orchestration between the clients and the Phantom engine, also provide the resource managment and HTML publishing capabilities. 
+
+
+
+
+

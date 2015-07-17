@@ -6,6 +6,7 @@
     "cors": "~2.2.0",
     "express": "~4.0.0",
     "fh-mbaas-api": "~4.11.0",
+    "marked": "^0.3.3",
     "mocha": "^2.1.0",
     "phantom": "^0.7.2",
     "phantomjs": "^1.9.17",

@@ -1,1 +1,23 @@
-Your Node.js code is deployed and running. This file is served statically from public/index.html.
+<DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>PDF Service</title>
+        <!-- <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'> -->
+        <link rel="stylesheet" href="https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css">
+    </head>
+    <body>
+        <div id="content" class="markdown-body"></div>
+    </body>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <script src="res.js"></script>
+    <script>
+        (function(){
+            var res = new Fetch(); 
+            res.download(['README.md'], function(e){
+                document.getElementById('content').innerHTML = marked(e['README.md']);   
+            });
+        }());
+    </script>
+</html>
+
