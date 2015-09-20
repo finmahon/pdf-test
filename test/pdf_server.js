@@ -53,6 +53,9 @@ describe('Page class', function() {
 
 });
 
+var html = fs.readFileSync('./test.html').toString();
+
+
 describe('Server Class', function() {
 
     var server = null;
@@ -63,7 +66,7 @@ describe('Server Class', function() {
     });
 
     it('Server#deploy', function() {
-        var html = fs.readFileSync('./test.html').toString();
+
 
         server.deploy(html);
 
@@ -73,7 +76,7 @@ describe('Server Class', function() {
     });
 
     it('Server#clean', function(done) {
-        server.remove(1000);
+        server.clean(1000);
 
         setTimeout(function() {
             var filez = fs.existsSync(server.getFile());
@@ -160,6 +163,46 @@ describe('express rest api server', function() {
 
 
     it('generating pdf', function(done) {
+        var req = http.request(options, function(res) {
+            res.on('data', function(data) {
+                file.write(data);
+                console.log('data->', data);
+            }).on('end', function() {
+                file.end();
+                console.log('finish..');
+                done();
+            });
+        });
+
+
+        req.write(data);
+        req.end();
+
+
+    });
+
+    it('generating pdf from html', function(done) {
+
+        var file = fs.createWriteStream('from_html.pdf');
+
+        var data = querystring.stringify({
+            'css': 'http://getbootstrap.com/',
+            'html': html
+        });
+
+        var options = {
+            host: '192.168.0.12',
+            port: 3000,
+            path: '/api/html',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': data.length
+            }
+        };
+
+
+
         var req = http.request(options, function(res) {
             res.on('data', function(data) {
                 file.write(data);
