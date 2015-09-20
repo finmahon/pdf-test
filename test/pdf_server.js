@@ -10,6 +10,7 @@ var Server = require('../lib/server');
 var Page = require('../lib/page');
 var TMPFile = require('../lib/temp');
 
+/*
 describe('TMPFile class', function() {
 
     var tmpFile;
@@ -19,7 +20,7 @@ describe('TMPFile class', function() {
     });
 
 });
-
+*/
 describe('Page class', function() {
     var page;
 
@@ -103,7 +104,6 @@ describe('PDF class', function() {
                 done();
             });
         }, 1900);
-
     });
 
 
@@ -120,7 +120,6 @@ describe('PDF class', function() {
                 }, 1500);
             });
         }, 1900);
-
     });
 
 });
