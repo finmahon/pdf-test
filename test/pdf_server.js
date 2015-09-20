@@ -117,7 +117,7 @@ describe('PDF class', function() {
                     var filez = fs.existsSync(file.getAbsolutePath());
                     expect(filez).to.be.false;
                     done();
-                }, 1500);
+                }, 3000);
             });
         }, 1900);
     });
