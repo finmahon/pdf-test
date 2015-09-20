@@ -2,8 +2,8 @@ var expect = require('expect.js')
 var pdf = require('../client/pdf')
 var fs = require('fs');
 
-//var url = { host: '127.0.0.1', port:3000 }
-var url = {host: 'mbs-dte-2xwnt4xuvkzok77yafphbxo5-dev.ac.gen.nrm.feedhenry.com', port: 80}
+var url = { host: '127.0.0.1', port:3000 }
+//var url = {host: 'mbs-dte-2xwnt4xuvkzok77yafphbxo5-dev.ac.gen.nrm.feedhenry.com', port: 80}
 
 
 describe('express rest api server', function() {
@@ -13,8 +13,8 @@ describe('express rest api server', function() {
     });
 
     try{
-    fs.unlinkSync('./mypdf.pdf');
-    fs.unlinkSync('./redirection.pdf');
+        fs.unlinkSync('./mypdf.pdf');
+        fs.unlinkSync('./redirection.pdf');
     }catch(e){ console.log('delete files');}
 
     it('testing client downloading PDF', function(done) {

@@ -3,6 +3,8 @@ var express = require('express');
 var mbaasExpress = mbaasApi.mbaasExpress();
 var cors = require('cors');
 var bodyParser = require('body-parser');
+
+//var Server = require('./server');
 // list the endpoints which you want to make securable here
 var securableEndpoints;
 // fhlint-begin: securable-endpoints
@@ -25,20 +27,24 @@ app.use(express.static(__dirname + '/public'));
 app.use(mbaasExpress.fhmiddleware());
 app.use(bodyParser());
 
+
+var port = process.env.FH_PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var host = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
+
 // fhlint-begin: custom-routes
-var Service = require('./lib/services.js').Services;
+var Service = new require('./lib/services');
 
-app.post('/api/pdf', Service.PDF);
-app.post('/api/html', Service.HTMLtoPDF);
+var service = new Service(host, port);
 
-
+app.post('/api/pdf', service.PDF);
+app.post('/api/html', service.HTMLtoPDF);
 // fhlint-end
+
 
 // Important that this is last!
 app.use(mbaasExpress.errorHandler());
 
-var port = process.env.FH_PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
-var host = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 var server = app.listen(port, host, function() {
   console.log("App started at: " + new Date() + " on port: " + port); 
 });
