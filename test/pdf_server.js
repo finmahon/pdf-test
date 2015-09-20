@@ -1,4 +1,6 @@
 var fs = require('fs');
+var querystring = require('querystring');
+var http = require('http');
 var superagent = require('superagent')
 var expect = require('chai').expect;
 var path = require('path');
@@ -7,10 +9,6 @@ var PDF = require('../lib/pdf');
 var Server = require('../lib/server');
 var Page = require('../lib/page');
 var TMPFile = require('../lib/temp');
-
-
-
-
 
 describe('TMPFile class', function() {
 
@@ -31,12 +29,6 @@ describe('Page class', function() {
     });
 
     it('get empty data', function() {
-
-        var err = new ReferenceError('This is a bad function.');
-        var fn = function() {
-            throw err;
-        }
-
         expect(page.getContent).to.be.a("function");
         expect(page.getContent).to.throw(Error);
         expect(page.getContent).to.throw(/Missing HTML/);
@@ -92,7 +84,6 @@ describe('Server Class', function() {
 });
 
 
-
 describe('PDF class', function() {
 
     it('initialization', function() {
@@ -122,7 +113,7 @@ describe('PDF class', function() {
         setTimeout(function() {
             PDF.clean(function(file) {
 
-                setTimeout(function(){
+                setTimeout(function() {
                     var filez = fs.existsSync(file.getAbsolutePath());
                     expect(filez).to.be.false;
                     done();
@@ -135,13 +126,25 @@ describe('PDF class', function() {
 });
 
 
-
-
-
 describe('express rest api server', function() {
 
     var id;
     var url = 'http://127.0.0.1:3000';
+    var data = querystring.stringify({
+        'url': 'http://www.google.com'
+    });
+
+    var options = {
+        host: '192.168.0.12',
+        port: 3000,
+        path: '/api/pdf',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Length': data.length
+        }
+    };
+    var file = fs.createWriteStream('generated.pdf');
 
     it('bad post data should return an error', function(done) {
         superagent.post(url + '/api/pdf')
@@ -156,19 +159,24 @@ describe('express rest api server', function() {
             });
     });
 
+
     it('generating pdf', function(done) {
-        superagent.post(url + '/api/pdf')
-            .send({
-                html: 'http://www.google.es',
-                pdf: 'google.pdf'
-            })
-            .end(function(e, res) {
-                console.log(res.file, res.body.name);
-                console.log('error->', e);
+        var req = http.request(options, function(res) {
+            res.on('data', function(data) {
+                file.write(data);
+                console.log('data->', data);
+            }).on('end', function() {
+                file.end();
+                console.log('finish..');
                 done();
             });
+        });
+
+
+        req.write(data);
+        req.end();
+
+
     });
 
 });
-
-
