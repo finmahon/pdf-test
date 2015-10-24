@@ -10,6 +10,11 @@ var Server = require('../lib/server');
 var Page = require('../lib/page');
 var TMPFile = require('../lib/temp');
 
+var PORT = '3000'; 
+var IP_ADDR = '0.0.0.0';
+var url = 'http://'+ IP_ADDR + ':' + PORT; 
+
+
 /*
 describe('TMPFile class', function() {
 
@@ -21,6 +26,9 @@ describe('TMPFile class', function() {
 
 });
 */
+
+
+
 describe('Page class', function() {
     var page;
 
@@ -48,7 +56,6 @@ describe('Page class', function() {
         page.setContent(html);
         expect(page.getContent().length).to.be.equals(html.length);
         page.patchCSS('http://getbootstrap.com/');
-        console.log(page.getPage());
     });
 
 });
@@ -71,7 +78,6 @@ describe('Server Class', function() {
         server.deploy(html);
 
         var filez = fs.existsSync(server.getFile());
-        console.log('url->', server.getURL());
         expect(filez).to.be.true;
     });
 
@@ -94,13 +100,12 @@ describe('PDF class', function() {
         expect(PDF).to.be.an('object');
     });
 
-    this.timeout(6000);
     it('PDF#generate', function(done) {
         expect(PDF).to.be.an('object');
+    this.timeout(6000);
 
         setTimeout(function() {
             PDF.generate('http://www.google.es', function(resp) {
-                console.log('file->', resp);
 
                 var filez = fs.existsSync(resp.filename);
                 expect(filez).to.be.true;
@@ -111,6 +116,7 @@ describe('PDF class', function() {
 
 
     it('PDF#clean', function(done) {
+    this.timeout(6000);
         expect(PDF).to.be.an('object');
 
         setTimeout(function() {
@@ -137,7 +143,7 @@ describe('express rest api server', function() {
     });
 
     var options = {
-        host: '192.168.0.12',
+        host: IP_ADDR,
         port: 3000,
         path: '/api/pdf',
         method: 'POST',
@@ -146,9 +152,9 @@ describe('express rest api server', function() {
             'Content-Length': data.length
         }
     };
-    var file = fs.createWriteStream('generated.pdf');
 
     it('bad post data should return an error', function(done) {
+    this.timeout(6000);
         superagent.post(url + '/api/pdf')
             .send({
                 name: 'John',
@@ -162,14 +168,14 @@ describe('express rest api server', function() {
     });
 
 
-    it('generating pdf', function(done) {
+    it('generating pdf ', function(done) {
+        this.timeout(6000);
+        var file = fs.createWriteStream('generated.pdf');
         var req = http.request(options, function(res) {
             res.on('data', function(data) {
                 file.write(data);
-                console.log('data->', data);
             }).on('end', function() {
                 file.end();
-                console.log('finish..');
                 done();
             });
         });
@@ -177,12 +183,9 @@ describe('express rest api server', function() {
 
         req.write(data);
         req.end();
-
-
     });
 
     it('generating pdf from html', function(done) {
-
         var file = fs.createWriteStream('from_html.pdf');
 
         var data = querystring.stringify({
@@ -191,8 +194,8 @@ describe('express rest api server', function() {
         });
 
         var options = {
-            host: '192.168.0.12',
-            port: 3000,
+            host: IP_ADDR,
+            port: PORT,
             path: '/api/html',
             method: 'POST',
             headers: {
@@ -206,10 +209,8 @@ describe('express rest api server', function() {
         var req = http.request(options, function(res) {
             res.on('data', function(data) {
                 file.write(data);
-                console.log('data->', data);
             }).on('end', function() {
                 file.end();
-                console.log('finish..');
                 done();
             });
         });
@@ -220,5 +221,8 @@ describe('express rest api server', function() {
 
 
     });
+
+
+
 
 });
