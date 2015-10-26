@@ -10,8 +10,18 @@ var Server = require('../lib/server');
 var Page = require('../lib/page');
 var TMPFile = require('../lib/temp');
 
-var PORT = '3000'; 
-var IP_ADDR = '0.0.0.0';
+var LOCAL_PORT = '3000'; 
+var LOCAL = '0.0.0.0';
+var CLOUD = 'orbis-dte-nfcjpoiedecuwa4m8bwdd7s4-dev.ac.dev.meap.networkrail.co.uk';
+var CLOUD_PORT = '80'; 
+
+
+
+
+var IP_ADDR = CLOUD;
+var PORT = CLOUD_PORT; 
+
+
 var url = 'http://'+ IP_ADDR + ':' + PORT; 
 
 
@@ -90,7 +100,6 @@ describe('Server Class', function() {
             done();
         }, 1500);
     });
-
 });
 
 
@@ -144,7 +153,7 @@ describe('express rest api server', function() {
 
     var options = {
         host: IP_ADDR,
-        port: 3000,
+        port: PORT,
         path: '/api/pdf',
         method: 'POST',
         headers: {
