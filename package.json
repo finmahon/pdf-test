@@ -9,8 +9,8 @@
     "fh-mbaas-api": "~4.11.0",
     "marked": "^0.3.3",
     "mocha": "^2.1.0",
-    "phantom": "^0.7.2",
-    "phantomjs": "^1.9.17",
+    "phantom": "^0.8.4",
+    "phantomjs": "^1.9.19",
     "request": "~2.40.0"
   },
   "devDependencies": {
