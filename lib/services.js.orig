@@ -1,0 +1,82 @@
+var fs = require('fs');
+var PDFClass = require('./pdf');
+var Page = require('./page');
+var Server = require('./server');
+
+var Services = function(host, port) {
+
+    this.HTMLtoPDF = function(req, res, next) {
+
+        var html = req.body.html;
+        var cssServer = req.body.css;
+        var pageFormat = req.body.format; 
+        var orientation = req.body.orientation; 
+
+        console.log('new pdf');
+        console.log('format: ', pageFormat || 'A4' );
+        console.log('orientation: ', orientation || 'portrait' );
+
+
+        var page = new Page();
+        var server = new Server({
+            server: 'http://' + host + ':' + port
+        });
+
+        if (html) {
+
+            page.setContent(html);
+            page.patchCSS(cssServer);
+
+            server.deploy(page.getPage());
+
+<<<<<<< HEAD
+            PDFClass.generate(server.getURL(), pageFormat, orientation, function(resp) {
+                console.log('file ->', resp.filename);
+=======
+            PDFClass.generate(server.getURL(), function(resp) {
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
+                res.download(resp.filename);
+                PDFClass.clean();
+                server.clean();
+            });
+
+        } else {
+            res.send({
+                msg: 'usage: type: POST  url: /api/pdf/{html}/{pdf} \\n \
+                     html: url of the page you want a snapshot. '
+            });
+        }
+    };
+
+    this.PDF = function(req, res, next) {
+        var urlName = req.body.url;
+        var pageFormat = req.body.format; 
+        var orientation = req.body.orientation; 
+
+        console.log('new pdf');
+        console.log('format: ', pageFormat || 'A4' );
+        console.log('orientation: ', orientation || 'portrait' );
+
+
+        if (urlName) {
+<<<<<<< HEAD
+            console.log('generating pdf');
+            PDFClass.generate(urlName, pageFormat, orientation, function(resp) {
+=======
+            PDFClass.generate(urlName, function(resp) {
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
+                console.log('file ->', resp.filename);
+                res.download(resp.filename);
+                PDFClass.clean();
+            });
+        } else {
+            res.send({
+                msg: 'usage: type: POST  url: /api/pdf/{html}/{pdf} \\n \
+                      url: url of the page you want a snapshot. \
+                      pdf: name of the pdf you want back.'
+            });
+        }
+    };
+}
+
+module.exports = Services;

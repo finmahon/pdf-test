@@ -25,8 +25,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Note: important that this is added just before your own Routes
 app.use(mbaasExpress.fhmiddleware());
-app.use(bodyParser());
-
+app.use(bodyParser({limit: '10mb'}));
 
 var port = process.env.FH_PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
 var host = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';

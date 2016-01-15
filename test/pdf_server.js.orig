@@ -10,7 +10,24 @@ var Server = require('../lib/server');
 var Page = require('../lib/page');
 var TMPFile = require('../lib/temp');
 
+<<<<<<< HEAD
 var ADDR = '192.168.0.11';
+=======
+var LOCAL_PORT = '3000'; 
+var LOCAL = '0.0.0.0';
+var CLOUD = 'orbis-dte-nfcjpoiedecuwa4m8bwdd7s4-dev.ac.dev.meap.networkrail.co.uk';
+var CLOUD_PORT = '80'; 
+
+
+
+
+var IP_ADDR = CLOUD;
+var PORT = CLOUD_PORT; 
+
+
+var url = 'http://'+ IP_ADDR + ':' + PORT; 
+
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
 
 /*
 describe('TMPFile class', function() {
@@ -100,8 +117,12 @@ describe('PDF class', function() {
     this.timeout(6000);
 
         setTimeout(function() {
+<<<<<<< HEAD
             PDF.generate('http://www.google.es',undefined,undefined, function(resp) {
                 console.log('file->', resp);
+=======
+            PDF.generate('http://www.google.es', function(resp) {
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
 
                 var filez = fs.existsSync(resp.filename);
                 expect(filez).to.be.true;
@@ -174,8 +195,13 @@ describe('express rest api server', function() {
     });
 
     var options = {
+<<<<<<< HEAD
         host: ADDR,
         port: 3000,
+=======
+        host: IP_ADDR,
+        port: PORT,
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
         path: '/api/pdf',
         method: 'POST',
         headers: {
@@ -185,7 +211,12 @@ describe('express rest api server', function() {
     };
 
     it('bad post data should return an error', function(done) {
+<<<<<<< HEAD
         superagent.post(ADDR + '/api/pdf')
+=======
+    this.timeout(6000);
+        superagent.post(url + '/api/pdf')
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
             .send({
                 name: 'John',
                 email: 'john@rpjs.co'
@@ -216,8 +247,11 @@ describe('express rest api server', function() {
     });
 
     it('generating pdf from html', function(done) {
+<<<<<<< HEAD
 
       this.timeout(15000);
+=======
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
         var file = fs.createWriteStream('from_html.pdf');
 
         var data = querystring.stringify({
@@ -227,8 +261,13 @@ describe('express rest api server', function() {
         });
 
         var options = {
+<<<<<<< HEAD
             host: ADDR ,
             port: 3000,
+=======
+            host: IP_ADDR,
+            port: PORT,
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
             path: '/api/html',
             method: 'POST',
             headers: {
@@ -244,7 +283,11 @@ describe('express rest api server', function() {
                 file.write(data);
             }).on('end', function() {
                 file.end();
+<<<<<<< HEAD
                 console.log('finish..');
+=======
+                done();
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
             });
         });
 
@@ -356,4 +399,8 @@ describe('express rest api server', function() {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c8fdc0ec5b415e6703d40fc0532500043f8bc278
 });
