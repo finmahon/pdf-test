@@ -10,6 +10,8 @@ var Server = require('../lib/server');
 var Page = require('../lib/page');
 var TMPFile = require('../lib/temp');
 
+var ADDR = '192.168.0.11';
+
 /*
 describe('TMPFile class', function() {
 
@@ -57,7 +59,6 @@ var html = fs.readFileSync('./test.html').toString();
 
 
 describe('Server Class', function() {
-
     var server = null;
 
     it(' Server object', function() {
@@ -99,7 +100,7 @@ describe('PDF class', function() {
         expect(PDF).to.be.an('object');
 
         setTimeout(function() {
-            PDF.generate('http://www.google.es', function(resp) {
+            PDF.generate('http://www.google.es',undefined,undefined, function(resp) {
                 console.log('file->', resp);
 
                 var filez = fs.existsSync(resp.filename);
@@ -109,17 +110,52 @@ describe('PDF class', function() {
         }, 1900);
     });
 
+    this.timeout(6000);
+    it('PDF#generate -> landscape', function(done) {
+        expect(PDF).to.be.an('object');
+        var file = 'google_landscape.pdf';
+        setTimeout(function() {
+            PDF.generate('http://www.google.es',undefined,'landscape', function(resp) {
+                console.log('file->', resp.filename);
+
+                var filez = fs.existsSync(resp.filename);
+                expect(filez).to.be.true;
+                done();
+            });
+        }, 1900);
+    });
+
+
+    this.timeout(6000);
+    it('PDF#generate -> A3', function(done) {
+        expect(PDF).to.be.an('object');
+        var file = 'google_landscape.pdf';
+        setTimeout(function() {
+            PDF.generate('http://www.google.es','A3', undefined, function(resp) {
+                console.log('file->', file);
+
+                var filez = fs.existsSync(resp.filename);
+                expect(filez).to.be.true;
+                done();
+            });
+        }, 1900);
+    });
+
+
 
     it('PDF#clean', function(done) {
         expect(PDF).to.be.an('object');
 
+        var cnt = false;
         setTimeout(function() {
+
             PDF.clean(function(file) {
 
                 setTimeout(function() {
                     var filez = fs.existsSync(file.getAbsolutePath());
                     expect(filez).to.be.false;
-                    done();
+                    if(!cnt)done();
+                    cnt =true;
                 }, 3000);
             });
         }, 1900);
@@ -137,7 +173,7 @@ describe('express rest api server', function() {
     });
 
     var options = {
-        host: '192.168.0.12',
+        host: ADDR,
         port: 3000,
         path: '/api/pdf',
         method: 'POST',
@@ -149,14 +185,14 @@ describe('express rest api server', function() {
     var file = fs.createWriteStream('generated.pdf');
 
     it('bad post data should return an error', function(done) {
-        superagent.post(url + '/api/pdf')
+        superagent.post(ADDR + '/api/pdf')
             .send({
                 name: 'John',
                 email: 'john@rpjs.co'
             })
             .end(function(e, res) {
-                expect(res.body.msg).to.not.empty;
-                expect(e).to.eql(null);
+                //expect(res.body.msg).to.not.empty;
+                //expect(e).to.eql(null);
                 done();
             });
     });
@@ -183,15 +219,17 @@ describe('express rest api server', function() {
 
     it('generating pdf from html', function(done) {
 
+      this.timeout(15000);
         var file = fs.createWriteStream('from_html.pdf');
 
         var data = querystring.stringify({
             'css': 'http://getbootstrap.com/',
-            'html': html
+            'html': html,
+            'orientation': 'portrait'
         });
 
         var options = {
-            host: '192.168.0.12',
+            host: ADDR ,
             port: 3000,
             path: '/api/html',
             method: 'POST',
@@ -210,7 +248,6 @@ describe('express rest api server', function() {
             }).on('end', function() {
                 file.end();
                 console.log('finish..');
-                done();
             });
         });
 
@@ -219,6 +256,107 @@ describe('express rest api server', function() {
         req.end();
 
 
+/* Testing landscape */
+      setTimeout(function(){
+
+        file = fs.createWriteStream('from_html_Landscape_Orientation.pdf');
+
+        data = querystring.stringify({
+            'css': 'http://getbootstrap.com/',
+            'orientation': 'landscape',
+            'html': html
+        });
+
+        options = {
+            host: ADDR ,
+            port: 3000,
+            path: '/api/html',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': data.length
+            }
+        };
+
+
+
+        var reqx = http.request(options, function(res) {
+            res.on('data', function(data) {
+                file.write(data);
+                console.log('data->', data);
+            }).on('end', function() {
+                file.end();
+                console.log('finish..');
+                done();
+            });
+        });
+
+
+        reqx.write(data);
+        reqx.end();
+
+
+}, 3000);
+
+
+
+
+/* Testing Page Formats 
+      setTimeout(function(){
+
+        console.log('===== PAGE FORMATS =====');
+        var filez = fs.createWriteStream('from_htmlA3.pdf');
+
+        var datax = querystring.stringify({
+            'css': 'http://getbootstrap.com/',
+            'format': 'A3',
+            'html': html
+        });
+
+        options = {
+            host: ADDR ,
+            port: 3000,
+            path: '/api/html',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': data.length
+            }
+        };
+
+
+
+        var reqx = http.request(options, function(res) {
+            res.on('data', function(data) {
+                filez.write(data);
+                console.log('data->', data);
+            }).on('end', function() {
+                filez.end();
+                console.log('finish..');
+                done();
+            });
+        });
+
+
+        reqx.write(datax);
+        reqx.end();
+
+
+}, 6000);
+
+*/
+
+
+
+
+
+
+
+
+
+
     });
+
+
 
 });
