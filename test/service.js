@@ -6,11 +6,10 @@ var path = require('path');
 var Service = require('../lib/service');
 
 describe('TMPFile class', function() {
-    var service = new Service();
+  var service = new Service();
 
-    it('initialization', function() {
-        expect(service).to.be.an('object');
-    });
-    
+  it('initialization', function() {
+    expect(service).to.be.an('object');
+  });
+
 });
-

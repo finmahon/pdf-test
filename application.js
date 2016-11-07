@@ -25,11 +25,12 @@ app.use(express.static(__dirname + '/public'));
 
 // Note: important that this is added just before your own Routes
 app.use(mbaasExpress.fhmiddleware());
-app.use(bodyParser({limit: '10mb'}));
+app.use(bodyParser({
+  limit: '10mb'
+}));
 
 var port = process.env.FH_PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
 var host = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-
 
 // fhlint-begin: custom-routes
 var Service = new require('./lib/services');
@@ -40,10 +41,9 @@ app.post('/api/pdf', service.PDF);
 app.post('/api/html', service.HTMLtoPDF);
 // fhlint-end
 
-
 // Important that this is last!
 app.use(mbaasExpress.errorHandler());
 
 var server = app.listen(port, host, function() {
-  console.log("App started at: " + new Date() + " on port: " + port); 
+  console.log('PDF Service started at: ' + new Date() + ' on port: ' + port);
 });

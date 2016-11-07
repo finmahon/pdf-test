@@ -5,17 +5,29 @@ module.exports = function(grunt) {
   // Project Configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
+      },
+      all: [
+        'Gruntfile.js',
+        'lib/**/*.js'
+      ]
+    },
+
     watch: {
       js: {
         files: ['gruntfile.js', 'application.js', 'lib/**/*.js', 'test/**/*.js'],
         options: {
-          livereload: true
+          livereload: 35799
         }
       },
       html: {
         files: ['public/views/**', 'app/views/**'],
         options: {
-          livereload: true
+          livereload: 35799
         }
       }
     },
@@ -42,8 +54,8 @@ module.exports = function(grunt) {
         logConcurrentOutput: true
       }
     },
-    env : {
-      options : {},
+    env: {
+      options: {},
       // environment variables - see https://github.com/jsoverson/grunt-env for more information
       local: {
         FH_USE_LOCAL_DB: true,
@@ -54,10 +66,12 @@ module.exports = function(grunt) {
            * This can be a mapping to a locally running instance of the service (for local development)
            * or a remote instance.
            */
-          var serviceMap = {
-            'SERVICE_GUID_1': 'http://127.0.0.1:8010',
-            'SERVICE_GUID_2': 'https://host-and-path-to-service'
-          };
+          var serviceURL = process.env.SERVICE_URL || 'https://orbis-ppte-zhiwddbnankdsssaq840gghw-dev.ac.dev.meap.networkrail.co.uk';
+          var serviceGUID = process.env.SERVICE_GUID || 'ZHIwddBnANKdSSSaQ840GGhw';
+          var serviceMap = {};
+
+          serviceMap[serviceGUID] = serviceURL;
+
           return JSON.stringify(serviceMap);
         }
       }
@@ -127,8 +141,8 @@ module.exports = function(grunt) {
     },
     plato: {
       src: {
-        options : {
-          jshint : grunt.file.readJSON('.jshintrc')
+        options: {
+          jshint: grunt.file.readJSON('.jshintrc')
         },
         files: {
           'plato': ['lib/**/*.js']
@@ -138,7 +152,9 @@ module.exports = function(grunt) {
   });
 
   // Load NPM tasks
-  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+  require('load-grunt-tasks')(grunt, {
+    scope: 'devDependencies'
+  });
 
   // Testing tasks
   grunt.registerTask('test', ['shell:unit', 'shell:accept']);
