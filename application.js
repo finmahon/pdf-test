@@ -13,8 +13,8 @@ app.use(bodyParser({
   limit: '10mb'
 }));
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3000;
-var host = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var port = process.env.PORT || 3000;
+var host = '0.0.0.0';
 
 var Service = new require('./lib/services');
 var service = new Service(host, port);

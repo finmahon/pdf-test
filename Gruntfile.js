@@ -49,7 +49,6 @@ module.exports = function(grunt) {
     },
     concurrent: {
       serve: ['nodemon', 'watch'],
-      debug: ['node-inspector', 'shell:debug', 'open:debug'],
       options: {
         logConcurrentOutput: true
       }
@@ -57,35 +56,9 @@ module.exports = function(grunt) {
     env: {
       options: {},
       // environment variables - see https://github.com/jsoverson/grunt-env for more information
-      local: {
-        FH_USE_LOCAL_DB: true,
-        FH_SERVICE_MAP: function() {
-          /*
-           * Define the mappings for your services here - for local development.
-           * You must provide a mapping for each service you wish to access
-           * This can be a mapping to a locally running instance of the service (for local development)
-           * or a remote instance.
-           */
-          var serviceURL = process.env.SERVICE_URL || 'https://orbis-ppte-zhiwddbnankdsssaq840gghw-dev.ac.dev.meap.networkrail.co.uk';
-          var serviceGUID = process.env.SERVICE_GUID || 'ZHIwddBnANKdSSSaQ840GGhw';
-          var serviceMap = {};
-
-          serviceMap[serviceGUID] = serviceURL;
-
-          return JSON.stringify(serviceMap);
-        }
-      }
-    },
-    'node-inspector': {
-      dev: {}
+      local: {}
     },
     shell: {
-      debug: {
-        options: {
-          stdout: true
-        },
-        command: 'env NODE_PATH=. node --debug-brk application.js'
-      },
       unit: {
         options: {
           stdout: true,
@@ -130,10 +103,6 @@ module.exports = function(grunt) {
       }
     },
     open: {
-      debug: {
-        path: 'http://127.0.0.1:8080/debug?port=5858',
-        app: 'Google Chrome'
-      },
       platoReport: {
         path: './plato/index.html',
         app: 'Google Chrome'
@@ -172,6 +141,5 @@ module.exports = function(grunt) {
   grunt.registerTask('analysis', ['plato:src', 'open:platoReport']);
 
   grunt.registerTask('serve', ['env:local', 'concurrent:serve']);
-  grunt.registerTask('debug', ['env:local', 'concurrent:debug']);
   grunt.registerTask('default', ['serve']);
 };
