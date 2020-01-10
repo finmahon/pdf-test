@@ -1,0 +1,223 @@
+= PDF Service Migration Summary
+:toc:
+
+== Background Information
+
+*App Name: PDF Service*
+
+*App Description:* The service provides an easy way to transform HTML to PDF
+
+*Actively Used:*  According to
+https://mbs.nwr.redhatmobile.com/#services/uklgxqcd7ojqkryfera5umhh/apps/uklgxqa6wbstlnqhbegdxkrh/details[*_App
+Studio_*], used by AMP
+
+== Component Technical Information
+
+=== Node App Technical Info
+
+[cols="1a,3a",]
+|===
+|*Item* |*Value*
+
+|RHMAP Git Repo (prod) (branch/tag) a|
+git@git.nwr.redhatmobile.com:mbs/PDF-Service-PDF-Service.git
+
+|Red Hat Temp Repo
+|https://gitlab.consulting.redhat.com/network-rail-migration/services/pdf-service.git
+
+|Final NR Git Repo |https://gitlab.com/networkrailmobile/pdf-service/pdf-service
+
+|Uses Mongo |-
+
+|Uses Redis |-
+
+|MBaaS Services Used |-
+
+|NR Integrations |-
+
+|Uses Push Notifications |No
+
+|Node.js Version |6.11.3
+
+|Any other relevant info |
+|===
+
+=== Migration notes
+
+==== Phantomjs
+
+Starting fails with the following error
+
+path.js:7
+
+throw new TypeError('Path must be a string. Received ' + inspect(path));
+
+^
+
+TypeError: Path must be a string. Received null
+
+at assertPath (path.js:7:11)
+
+at Object.dirname (path.js:1331:5)
+
+at Object.<anonymous>
+(/Users/Daria/Projects/appdev/nwr/migration/services/pdf-service/lib/pdf.js:13:14)
+
+at Module._compile (module.js:570:32)
+
+at Object.Module._extensions..js (module.js:579:10)
+
+at Module.load (module.js:487:32)
+
+at tryModuleLoad (module.js:446:12)
+
+at Function.Module._load (module.js:438:3)
+
+at Module.require (module.js:497:17)
+
+at require (internal/module.js:20:19)
+
+Because 'phantomjs' returns *path == null*
+
+See
+https://github.com/karma-runner/karma-phantomjs-launcher/issues/200[_https://github.com/karma-runner/karma-phantomjs-launcher/issues/200_]
+
+Upgraded phantomjs package to the latest version, which fixes the issue.
+
+Note that phantomjs has been renamed to phantomjs-prebuilt, see
+https://www.npmjs.com/package/phantomjs[_https://www.npmjs.com/package/phantomjs_].
+
+npm WARN deprecated phantom@0.8.4: v1 is no longer maintained, please
+upgrade to v2.0+ as soon possible.
+
+Solution: use the latest version of Phantomjs, which required changing
+callbacks to promises.
+
+If it throws the following error on installation:
+
+Error: PhantomJS binary was not found. This generally means something
+went wrong when installing phantomjs-prebuilt. Exiting.
+
+Try doing:
+
+npm install --force phantomjs-prebuilt
+
+Compare the PDF output of the current service and the new one:
+
+curl -X POST -v
+https://mbs-uklgxqa6wbstlnqhbegdxkrh-dte.mbaas1.nwr.redhatmobile.com/api/pdf
+-d 'url=https://redhat.com' --output current.pdf
+
+curl -X POST -v http://localhost:3000/api/pdf -d
+'url=https://redhat.com' --output new.pdf
+
+See results in
+https://drive.google.com/drive/u/0/folders/1oqK71sqnUQRZteT0aofzSK0Ad8smYXSD[_https://drive.google.com/drive/u/0/folders/1oqK71sqnUQRZteT0aofzSK0Ad8smYXSD_]
+
+=== Grunt dependency
+
+Error:
+
+├─┬ UNMET PEER DEPENDENCY grunt@1.0.1
+
+This is because the following packages require older versions of grunt
+(0.4.1 and 0.4.0):
+
+npm ERR! peer dep missing: grunt@~0.4.1, required by grunt-nodemon@0.2.0
+
+npm ERR! peer dep missing: grunt@~0.4.0, required by grunt-shell@0.7.0
+
+Fixing this by upgrading the versions of these packages.
+
+"grunt-shell": "^2.0.0", (dependency on grunt@^1.0.1)
+
+[#anchor-13]####Phase 2 migration notes
+
+Both
+https://www.npmjs.com/package/phantomjs[_https://www.npmjs.com/package/phantomjs_]
+and
+https://www.npmjs.com/package/phantomjs-prebuilt[_https://www.npmjs.com/package/phantomjs-prebuilt_]
+packages are deprecated, so they were removed from the dependencies.
+Only
+https://www.npmjs.com/package/phantom[_https://www.npmjs.com/package/phantom_]
+has been kept.
+
+Although "phantomjs-prebuilt" is a dependency of "phantom" anyway.
+
+== Phased Testing Checklist
+
+=== Phase 1
+
+[cols="1a,3a",]
+|===
+|*Item* |*Value*
+
+|Code refactored |done
+
+|Code committed to migration branch |done
+
+|Tested locally as much as possible.
+https://docs.google.com/document/d/1t4jl0h-JhWawRfJIoBeU_ghNSMgQ3fprfAYf3dY3pKM/edit#[_guide_]
+|done
+
+|README.md updated with running locally |done
+
+|Add npm-shrinkwrap where it does not exist and update package.json if
+necessary |done
+
+|link:#_jeds3hcrrdvt[_Update Testing guide below_] |done
+
+|Any other relevant info |
+|===
+
+=== Phase 2
+
+TBC
+
+=== Phase 3
+
+==== Openshift setup
+
+....
+GITLAB_ACCESS_TOKEN=$GIT_TOKEN ./scripts/setup.sh \
+  --project-name pdf-service \
+  --app-name pdf-service-node-app \
+  --app-type node \
+  --git-url git@gitlab.com:networkrailmobile/pdf-service/pdf-service.git \
+  --use-redis false
+....
+
+=== Phase 4
+
+TBC
+
+=== Testing guide
+
+To view the result of the PDF generation of the service deployed on
+OpenShift, execute:
+
+curl -s -X POST
+http://pdf-service-pdf-service-dev.9069.nwr-dev.openshiftapps.com/api/pdf -d 'url=https://redhat.com' --output new.pdf
+
+To compare the output with the previous (RHMAP) implementation of the
+service, execute:
+
+curl -s -X POST
+https://mbs-uklgxqa6wbstlnqhbegdxkrh-dte.mbaas1.nwr.redhatmobile.com/api/pdf -d 'url=https://redhat.com' --output current.pdf
+
+**NOTE: **the above don't actually give great results for the updated
+app, maybe try another URL instead.
+
+For example, with these two, the current implementation outputs just a
+blank screen, while the new on works well:
+
+curl -s -X POST
+http://pdf-service-pdf-service-dev.9069.nwr-dev.openshiftapps.com/api/pdf -d 'url=https://kubernetes.io' --output new.pdf
+
+curl -s -X POST
+https://mbs-uklgxqa6wbstlnqhbegdxkrh-dte.mbaas1.nwr.redhatmobile.com/api/pdf -d 'url=https://kubernetes.io' --output current.pdf
+
+
+curl -X POST -v https://pdf-service-node-app-ppte.9069.nwr-dev.openshiftapps.com/api/pdf -d 'url=http://www.waterfordgaa.ie/' --output new.pdf
+
+

@@ -30,6 +30,24 @@ Provide DOM manipulation in server side.
 This module provide the orchestration between the clients and the Phantom engine, also provide the resource managment and HTML publishing capabilities. 
 
 
+# MIGRATION Phase 3 / 4
 
+* Openshift setup
 
+....
+GITLAB_ACCESS_TOKEN=$GIT_TOKEN ./scripts/setup.sh \
+  --project-name pdf-service \
+  --app-name pdf-service-node-app \
+  --app-type node \
+  --git-url git@gitlab.com:networkrailmobile/pdf-service/pdf-service.git \
+  --use-redis false
+....
+
+* bump version to 0.4.0
+
+* add liveness / readiness probes
+
+## TESTING
+
+curl -X POST -v https://pdf-service-node-app-ppte.9069.nwr-dev.openshiftapps.com/api/pdf -d 'url=http://www.waterfordgaa.ie/' --output new.pdf
 
