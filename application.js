@@ -2,12 +2,12 @@ var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var app = express();
-var probe = require('kube-probe');
+// var probe = require('kube-probe');
 
 // Enable CORS for all requests
 app.use(cors());
 
-probe(app)
+// probe(app)
 
 // allow serving of static files from the public directory
 app.use(express.static(__dirname + '/public'));
