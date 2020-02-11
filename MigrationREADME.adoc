@@ -187,6 +187,10 @@ GITLAB_ACCESS_TOKEN=$GIT_TOKEN ./scripts/setup.sh \
   --use-redis false
 ....
 
+==== version 0.4.1
+
+fix bug in pdf size / scale - remove paperSize in `lib/pdf.js`
+
 === Phase 4
 
 TBC

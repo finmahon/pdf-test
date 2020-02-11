@@ -4,3 +4,6 @@ cov-*
 coverage
 plato
 .idea
+.DS_Store
+DS_Store
+/*.pdf

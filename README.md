@@ -51,3 +51,6 @@ GITLAB_ACCESS_TOKEN=$GIT_TOKEN ./scripts/setup.sh \
 
 curl -X POST -v https://pdf-service-node-app-ppte.9069.nwr-dev.openshiftapps.com/api/pdf -d 'url=http://www.waterfordgaa.ie/' --output new.pdf
 
+## version 0.4.1
+
+fix bug in pdf size / scale - remove paperSize in `lib/pdf.js`
