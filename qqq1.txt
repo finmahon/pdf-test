@@ -1,0 +1,522 @@
+ 2020-02-14T01:32:17.879Z
+format: A4
+orientation: portrait
+QQQQQ  {"css":"https://crt-node-app-ppte.9069.nwr-dev.openshiftapps.com/","html":"<!doctype  html>\n\n<html lang=\"en\">\n\n<head>\n    <link rel=\"stylesheet\" href=\"pdf-template-form1.css\">\n</head>\n\n<body>\n\n<div>\n\n    <h1 class=\"pageNumber\">2</h1>\n\n    <div id=\"form-header\" class=\"bold text-center\">CRT Assessment - Form 2\n        <br> CWR - Stressed Site\n    </div>\n\n    <div class=\"form-section section-one\">\n        <div class=\"section-one-row\">\n            <div class=\"left label\">IP Delivery Team:&nbsp;&nbsp;</div>\n            <div class=\"left value normal text\">\n                IP Track\n            </div>\n            <div class=\"left label\">Contractor:&nbsp;&nbsp;</div>\n            <div class=\"left value wide text\">\n                Balfour Beatty\n            </div>\n        </div>\n        <div class=\"clear section-one-row\">\n            <div class=\"left label\">CRT Co-Ordinator:&nbsp;&nbsp;</div>\n            <div class=\"left value normal text\">\n                Hither Green\n            </div>\n            <div class=\"left label\">Contractor - Depot:&nbsp;&nbsp;</div>\n            <div class=\"left value wide text\">\n                Hither Green\n            </div>\n        </div>\n        <div class=\"clear section-one-row\">\n            <div class=\"left label\">Site Location:&nbsp;&nbsp;</div>\n            <div class=\"left value normal text\">\n                London\n            </div>\n            <div class=\"left label\">Project ID:&nbsp;&nbsp;</div>\n            <div class=\"left value wide text\">\n                sdfdsfdsfsdf\n            </div>\n        </div>\n        <div class=\"clear section-one-row\">\n            <div class=\"left label\">ELR:&nbsp;&nbsp;</div>\n            <div class=\"left value narrow text\">\n                DFD3\n            </div>\n            <div class=\"left label\">Start:&nbsp;&nbsp;</div>\n            <div class=\"left value small\">\n                22\n            </div>\n            <div class=\"left\">\n                <div class=\"normal-font section-one-units\">&nbsp;m</div>\n            </div>\n            <div class=\"left label\">&nbsp;&nbsp;</div>\n            <div class=\"left value small pull-left\">\n                22\n            </div>\n            <div class=\"normal-font section-one-units\">&nbsp;yds</div>\n        </div>\n        <div class=\"clear section-one-row\">\n            <div class=\"left label\">Track ID:&nbsp;&nbsp;</div>\n            <div class=\"left value narrow text\">\n                3423\n            </div>\n            <div class=\"left label\">End:&nbsp;&nbsp;</div>\n            <div class=\"left value small\">\n                88\n            </div>\n            <div class=\"left\">\n                <div class=\"normal-font section-one-units\">&nbsp;m</div>\n            </div>\n            <div class=\"left label\">&nbsp;&nbsp;</div>\n            <div class=\"left value small pull-left\">\n                88\n            </div>\n            <div class=\"left\">\n                <div class=\"normal-font section-one-units\">&nbsp;yds</div>\n            </div>\n            <div id=\"seg-text\">Segment\n                <br>Length=\n                116226yds\n            </div>\n        </div>\n        <div class=\"clear section-one-row\">\n            <div class=\"left label\">UID:&nbsp;&nbsp;</div>\n            <div class=\"left value normal text\">\n                345435345345\n            </div>\n            <div class=\"left\" id=\"uid-text\"> Is any of the above mileage\n                <br> Red Zone Prohibited?\n            </div>\n            <div id=\"red-zone-value\" class=\"left value small\">\n                Yes\n            </div>\n        </div>\n        <div class=\"clear section-one-row\">\n            <div class=\"left label\">Work Type:&nbsp;&nbsp;</div>\n            <div class=\"left value normal text\">\n                dfgdgdfg\n            </div>\n            <div class=\"left label\">Linespeed:&nbsp;&nbsp;</div>\n            <div class=\"left value small\">\n                75\n            </div>\n            <div class=\"left\">\n                <div class=\"normal-font section-one-units\">&nbsp;mph</div>\n            </div>\n            <div class=\"left label\">&nbsp;&nbsp;</div>\n            <div class=\"left value small ls-pull-left\">\n                S&amp;C\n            </div>\n            <div class=\"normal-font section-one-units\">S&amp;C or PL</div>\n        </div>\n        <div class=\"clear section-one-row\">\n            <div class=\"left label\">Risk Description:&nbsp;&nbsp;</div>\n            <div class=\"left value risk-desc text\">\n                Mining Subsidence\n            </div>\n        </div>\n    </div>\n\n    <div class=\"form-section section-two\">\n        <div class=\"section-header bold\">Table 5 Values</div>\n        <div class=\"clear section-two-row bold padding-btm-20\">\n            <div class=\"left\">Track Code Condition:&nbsp;&nbsp;</div>\n            <div class=\"left value narrow track-code text\">\n                8\n            </div>\n            <div class=\"left\">Stress Free Temperature:&nbsp;\n                <br>(SFT)&nbsp;&nbsp;</div>\n            <div class=\"left value small value-border-two\"><span class=\"extra-bold\">21 &deg;C</span></div>\n        </div>\n        <div class=\"clear section-two-row\">\n            <div id=\"crt-text\" class=\"left\">Refer to table 5 - Critical Rail Temperatures for \"standard\" CWR track\n                <br> NR/L2/TRK/001/mod14 - Managing track in hot weather\n            </div>\n            <div class=\"left\">\n                <div class=\"text-center width-70\">CRT(W)</div>\n                <div class=\"left value small text-center crt bold\"><span class=\"value-text\">SFT +</span>\n                    <br>\n                    15 &deg;C\n                </div>\n            </div>\n            <div class=\"left\">\n                <div class=\"text-center width-70\">CRT(30/60)</div>\n                <div class=\"left value small text-center crt bold\"><span class=\"value-text\">CRT(W) +</span>\n                    <br>\n                    3 &deg;C\n                </div>\n            </div>\n            <div class=\"left\">\n                <div class=\"text-center width-70\">CRT(20)</div>\n                <div class=\"left value small text-center crt bold\"><span class=\"value-text\">CRT(W) +</span>\n                    <br>\n                    5 &deg;C\n                </div>\n            </div>\n        </div>\n        <div class=\"clear section-two-row\">\n            <div id=\"dts-text\" class=\"left\">Was the DTS used throughout\n                <br> Yes <span class=\"small-text\">(DTS uplift only applicable to Track Condition codes 4 &amp; 8)</span>\n                <br> No\n            </div>\n            <div class=\"left table-5-num\">\n                + 5 &deg;C\n                <br>&nbsp;&nbsp;&nbsp;0 &deg;C\n            </div>\n            <div id=\"dts-bracket\" class=\"left\"></div>\n            <div id=\"dts-horizontal-line\" class=\"left\"></div>\n            <div id=\"dts-val\" class=\"left value small value-border-two bold\">\n                0 &deg;C\n            </div>\n        </div>\n        <div class=\"clear\">\n            <div class=\"section-header margin-top bold\">Table 6 Adustments</div>\n        </div>\n        <div class=\"clear\">\n            <div id=\"trk-curvate-text\" class=\"left section-two-row\">\n                Track Curvature\n                <br> radius over 1500m\n                <br> radius between 1500m and 800m\n                <br> radius between 800m and 400m\n                <br> radius below 400m <span class=\"small-text\">(with lateral resistance and plates fitted)</span>\n                <br> radius below 400m <span class=\"small-text\">(ballast glued)</span>\n                <br> radius below 400m\n            </div>\n            <div class=\"left table-5-num\">\n                &nbsp;&nbsp;0 &deg;C\n                <br>\n                <br> &nbsp;-4 &deg;C\n                <br> &nbsp;-7 &deg;C\n                <br> &nbsp;-7 &deg;C\n                <br> &nbsp;-7 &deg;C\n                <br> &nbsp;-9 &deg;C\n                <br>\n            </div>\n            <div id=\"trk-curvate-bracket\" class=\"left\"></div>\n            <div id=\"trk-curvate-horizontal-line\" class=\"left\"></div>\n            <div class=\"left\">\n                <div id=\"trk-curvate\" class=\"left value small value-border-two bold\">\n                    0 &deg;C\n                </div>\n            </div>\n        </div>\n        <div class=\"clear\">\n            <div id=\"sleeper-spacing-text\" class=\"left section-two-row\">\n                Sleeper / Bearing Spacing (per 60ft [18m] length)\n                <br> 24 No.\n                <br> 26 No.\n                <br> 28 No. <span class=\"small-text\">(also applicable to RT60 and NR60 S&amp;C)</span>\n                <br> 28 No. CEN 60 rail and G44 sleepers\n                <br> 30 No.\n                <br>\n            </div>\n            <div class=\"left table-5-num\">\n                &nbsp;&nbsp;-2 &deg;C\n                <br> &nbsp;&nbsp;&nbsp;0 &deg;C\n                <br> + 2 &deg;C\n                <br> + 4 &deg;C\n                <br> + 4 &deg;C\n                <br>\n            </div>\n            <div id=\"sleeper-bracket\" class=\"left\"></div>\n            <div id=\"sleeper-horizontal-line\" class=\"left\"></div>\n            <div class=\"left\">\n                <div id=\"sleeper-spacing\" class=\"left value small value-border-two bold\">\n                    -2 &deg;C\n                </div>\n            </div>\n        </div>\n        <div class=\"clear\">\n            <div id=\"bearer-type-text\" class=\"left section-two-row\">\n                Rail and Sleeper / Bearer type\n                <br> FB on concrete or steel spade ended\n                <br> FB on hardwood or softwood (Plain line)\n                <br> FB on hardwood or softwood (S&amp;C)\n                <br> BH on concrete\n                <br> BH on timber\n                <br><span class=\"italic\">Crimp-ended steel</span>\n            </div>\n            <div class=\"left table-5-num\">\n                &nbsp;&nbsp;&nbsp;0 &deg;C\n                <br> &nbsp;&nbsp;-8 &deg;C\n                <br> &nbsp;&nbsp;-5 &deg;C\n                <br> &nbsp;&nbsp;-5 &deg;C\n                <br> &nbsp;&nbsp;-9 &deg;C\n                <br> -27 &deg;C\n                <br>\n            </div>\n            <div id=\"bearer-bracket\" class=\"left\"></div>\n            <div id=\"bearer-horizontal-line\" class=\"left\"></div>\n            <div class=\"left\">\n                <div id=\"bearer-type\" class=\"left value small value-border-two bold\">\n                    -27 &deg;C\n                </div>\n            </div>\n            <div class=\"left not-to-exceed\">\n                <span class=\"left italic small-text\">Not to exceed: </span>\n                <div class=\"clear\">\n                    <div class=\"left value small medium-text text-center\">SFT + 5 &deg;C</div>\n                    <div class=\"left value small medium-text text-center\">SFT + 8 &deg;C</div>\n                    <div class=\"left value small medium-text text-center\">SFT + 11 &deg;C</div>\n                </div>\n            </div>\n        </div>\n        <div class=\"clear\">\n            <div id=\"train-ops-text\" class=\"left section-two-row\">\n                <span class=\"bold\">Other</span>\n                <br> Train Operated Catch points (where not clipped out of use)\n            </div>\n            <div class=\"left table-5-num\">\n                -15 &deg;C\n                <br> &nbsp;&nbsp;&nbsp;0 &deg;C\n                <br>\n            </div>\n            <div class=\"left high-output-line\"></div>\n            <div class=\"left\">\n                <div id=\"train-ops\" class=\"left value small value-border-two bold\">\n                    -15 &deg;C\n                </div>\n            </div>\n        </div>\n        <div class=\"clear\">\n            <div id=\"trs-text\" class=\"left section-two-row\">\n                <span class=\"bold\">High Output TRS Sites only</span>\n                <br> Allowance for compressed joint at D75 cut out\n            </div>\n            <div class=\"left table-5-num\">\n                -5 &deg;C\n                <br> &nbsp;0 &deg;C\n                <br>\n            </div>\n            <div class=\"left high-output-line\"></div>\n            <div class=\"left\">\n                <div id=\"trs\" class=\"left value small value-border-two bold\">\n                    -5 &deg;C\n                </div>\n            </div>\n        </div>\n        <div class=\"clear\">\n            <div id=\"calc-values-text\" class=\"left section-two-row\">\n                <span class=\"bold\">Calculated Values</span>\n                <br> Note that the CRT(W) value shall not exceed the maximum\n                <br> allowable values shown below and values will not be\n                <br> populated unless all questions are answered\n            </div>\n            <div id=\"calc-values\" class=\"left\">\n                <div class=\"left\">\n                    <div class=\"text-center width-70 medium-text bold\">CRT(W)</div>\n                    <div class=\"value small value-border-two\"><span class=\"bold\">-13 &deg;C</span></div>\n                    <div class=\"text-center width-70 small-text\">(Total of boxes above)</div>\n                </div>\n                <div class=\"left\">\n                    <div class=\"text-center width-70 medium-text bold\">CRT(30/60)</div>\n                    <div class=\"value small value-border-two\"><span class=\"bold\">-10 °C</span></div>\n                    <div class=\"text-center width-70 small-text\">=CRT(W)+\n                        3\n                    </div>\n                </div>\n                <div class=\"left\">\n                    <div class=\"text-center width-70 medium-text bold\">CRT(20)</div>\n                    <div class=\"value small value-border-two\"><span class=\"bold\">-8 &deg;C</span></div>\n                    <div class=\"text-center width-70 small-text\">=CRT(W)+\n                        5\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"form-section section-three\">\n        <div class=\"bold section-header\">Maximum allowable CRT(W) values</div>\n        <div class=\"bold section-header padding-30\">Other Considerations (Table 6 Notes (2))</div>\n        <div class=\"left padding-30\">\n            <div>\n                <div id=\"other-cons-text\" class=\"left\">Do any of the following exist within the CRT assessed mileage: Unconsolidated lineside drainage, Active subsidence, Misalignments or sites of known rail creep?</div>\n                <div id=\"other-cons-value1\" class=\"left text-center\">\n                    <div>Yes / No</div>\n                    <div class=\" value small value-border-two bold\">\n                        Yes\n                    </div>\n                </div>\n                <div id=\"other-cons-value2-text\" class=\"left\">If Yes, SFT + 15&deg;C =</div>\n                <div id=\"other-cons-value2\" class=\"left value small value-border-two bold\">\n                    36 &deg;C\n                </div>\n            </div>\n            <div>\n                <div class=\"left\">\n                    <div id=\"sft-32-text\" class=\"left\">For sites with Track Condition Code 8 ONLY:\n                        <br>(Subject to Max of SFT + 32&deg;C)\n                    </div>\n                    <div id=\"sft32\" class=\"left\">SFT + 32&deg;C =</div>\n                    <div id=\"sft-32-val\" class=\"left value small value-border-two\">\n                        53 &deg;C\n                    </div>\n                    <div id=\"sft-text\" class=\"left\">(CRT Max(W) is the lowest calculated value)</div>\n                </div>\n            </div>\n        </div>\n        <div id=\"max-crt-container\" class=\"right bold\">\n            <div class=\"text-center\">\n                Therefore\n                <br> Max CRT (W)\n            </div>\n            <div id=\"max-crt\" class=\"text-center value small\">\n                26 &deg;C\n                <br><span class=\"value-text\">(SFT + 5)</span></div>\n        </div>\n    </div>\n\n    <div class=\"pdf-page-splitter\"></div>\n\n    <div class=\"form-section section-four\">\n        <div class=\"section-header\"><span class=\"bold\">Adjustment Switch Details</span> (if applicable)</div>\n        <div class=\"padding-30 padding-btm-28\">\n            <div class=\"left adjust-switch-label\">Adjustment Switch 1.</div>\n            <div class=\"left location-val-m\">\n                <div class=\"left\">\n                    Location:&nbsp;\n                </div>\n                <div class=\"left value location\">\n                    \n                </div>\n                <div class=\"left text-bottom\">&nbsp;m</div>\n            </div>\n            <div class=\"left location-val-yds\">\n                <div class=\"left value small\">\n                    \n                </div>\n                <div class=\"left text-bottom\">&nbsp;yds</div>\n            </div>\n            <div class=\"left\">\n                Gap:&nbsp;\n            </div>\n            <div class=\"left value small\">\n                75\n            </div>\n            <div class=\"left text-bottom\">&nbsp;mm\n            </div>\n        </div>\n        <div class=\"clear padding-30\">\n            <div class=\"left adjust-switch-label\">Adjustment Switch 2.</div>\n            <div class=\"left location-val-m\">\n                <div class=\"left\">\n                    Location:&nbsp;</div>\n                <div class=\"left value location\">\n                    \n                </div>\n                <div class=\"left text-bottom\">&nbsp;m</div>\n            </div>\n            <div class=\"left location-val-yds\">\n                <div class=\"left value small\">\n                    \n                </div>\n                <div class=\"left text-bottom\">&nbsp;yds\n                </div>\n            </div>\n            <div class=\"left\">\n                Gap:&nbsp;</div>\n            <div class=\"left value small\">\n                75\n            </div>\n            <div class=\"left text-bottom\">&nbsp;mm</div>\n        </div>\n    </div>\n\n    <div class=\"form-section bold section-five\">\n        <div class=\"padding-btm-28\">\n            <div class=\"left section-five-left-label\">CRT Assessment date:&nbsp;</div>\n            <div class=\"left value section-five-val-left\">\n                30-Jan-20\n            </div>\n            <div class=\"left section-five-right-label\">CRT Assessment calculated by:&nbsp;</div>\n            <div class=\"left value normal-no-margin text\">\n                Mr Test 3\n            </div>\n        </div>\n        <div class=\"clear padding-btm-28\">\n            <div class=\"left section-five-left-label\">Ballast Disturbance date:&nbsp;</div>\n            <div class=\"left value section-five-val-left\">\n                30-Jan-20\n            </div>\n            <div class=\"left section-five-right-label\">Position:&nbsp;</div>\n            <div class=\"left value normal-no-margin text\">\n                dfgdfgfdg\n            </div>\n        </div>\n        \n        <div class=\"clear padding-btm-28\">\n            <div class=\"left section-five-left-label\">Equivalent Million Gross Tonnes&nbsp; Per Annum (EMGTPA):&nbsp;</div>\n            <div class=\"left value section-five-val-left\">\n                &lt;2\n            </div>\n            <div class=\"left section-five-right-label last\">Calculated Weekly Increment&nbsp;\n                <br>(only applicable to condition 8):&nbsp;</div>\n            <div class=\"left value section-five-val-left\">\n                0.5 &deg;C\n            </div>\n            <p class=\"perWeek\">&nbsp; per week</p>\n        </div>\n        \n    </div>\n\n    <div class=\"clear form-section bold section-five\">\n        <div class=\"margin-btm-10\">Instruction to archive the above site in the CRT Register</div>\n        <div class=\"padding-btm-28\">\n            <div class=\"left section-five-left-label\">Removal date :&nbsp;</div>\n            <div class=\"left value section-five-val-left\"></div>\n            <div class=\"left section-five-right-label\">Archival authorised by :&nbsp;</div>\n            <div class=\"left value normal-no-margin text\"></div>\n        </div>\n        <div class=\"clear padding-btm-28\">\n            <div class=\"left section-five-left-label\">Reason for Archival :&nbsp;</div>\n            <div class=\"left value section-five-val-left height-40\"></div>\n            <div class=\"left section-five-right-label\">Position:&nbsp;</div>\n            <div class=\"left value normal-no-margin text\"></div>\n        </div>\n        <div class=\"right padding-btm-28 margin-right-38\">\n            <div class=\"left section-five-right-label last\">Signature :&nbsp;\n                <br>(Wet ink)&nbsp;</div>\n            <div class=\"left value normal-no-margin\">\n            </div>\n        </div>\n    </div>\n\n    <div class=\"clear footer lastRow\">\n        <div class=\"left\">QMS Reference TRK / CON / 00004 V06</div>\n        <div class=\"right\">IMS No. IP390</div>\n    </div>\n\n    \n\n</div>\n\n</body>\n\n</html>\n"}
+server  undefined
+
+
+patchCSS
+ <!doctype html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://crt-node-app-ppte.9069.nwr-dev.openshiftapps.com/pdf-template-form1.css"> 
+</head>
+
+<body>
+
+<div>
+
+    <h1 class="pageNumber">2</h1>
+
+    <div id="form-header" class="bold text-center">CRT Assessment - Form 2
+        <br> CWR - Stressed Site
+    </div>
+
+    <div class="form-section section-one">
+        <div class="section-one-row">
+            <div class="left label">IP Delivery Team:&#xA0;&#xA0;</div>
+            <div class="left value normal text">
+                IP Track
+            </div>
+            <div class="left label">Contractor:&#xA0;&#xA0;</div>
+            <div class="left value wide text">
+                Balfour Beatty
+            </div>
+        </div>
+        <div class="clear section-one-row">
+            <div class="left label">CRT Co-Ordinator:&#xA0;&#xA0;</div>
+            <div class="left value normal text">
+                Hither Green
+            </div>
+            <div class="left label">Contractor - Depot:&#xA0;&#xA0;</div>
+            <div class="left value wide text">
+                Hither Green
+            </div>
+        </div>
+        <div class="clear section-one-row">
+            <div class="left label">Site Location:&#xA0;&#xA0;</div>
+            <div class="left value normal text">
+                London
+            </div>
+            <div class="left label">Project ID:&#xA0;&#xA0;</div>
+            <div class="left value wide text">
+                sdfdsfdsfsdf
+            </div>
+        </div>
+        <div class="clear section-one-row">
+            <div class="left label">ELR:&#xA0;&#xA0;</div>
+            <div class="left value narrow text">
+                DFD3
+            </div>
+            <div class="left label">Start:&#xA0;&#xA0;</div>
+            <div class="left value small">
+                22
+            </div>
+            <div class="left">
+                <div class="normal-font section-one-units">&#xA0;m</div>
+            </div>
+            <div class="left label">&#xA0;&#xA0;</div>
+            <div class="left value small pull-left">
+                22
+            </div>
+            <div class="normal-font section-one-units">&#xA0;yds</div>
+        </div>
+        <div class="clear section-one-row">
+            <div class="left label">Track ID:&#xA0;&#xA0;</div>
+            <div class="left value narrow text">
+                3423
+            </div>
+            <div class="left label">End:&#xA0;&#xA0;</div>
+            <div class="left value small">
+                88
+            </div>
+            <div class="left">
+                <div class="normal-font section-one-units">&#xA0;m</div>
+            </div>
+            <div class="left label">&#xA0;&#xA0;</div>
+            <div class="left value small pull-left">
+                88
+            </div>
+            <div class="left">
+                <div class="normal-font section-one-units">&#xA0;yds</div>
+            </div>
+            <div id="seg-text">Segment
+                <br>Length=
+                116226yds
+            </div>
+        </div>
+        <div class="clear section-one-row">
+            <div class="left label">UID:&#xA0;&#xA0;</div>
+            <div class="left value normal text">
+                345435345345
+            </div>
+            <div class="left" id="uid-text"> Is any of the above mileage
+                <br> Red Zone Prohibited?
+            </div>
+            <div id="red-zone-value" class="left value small">
+                Yes
+            </div>
+        </div>
+        <div class="clear section-one-row">
+            <div class="left label">Work Type:&#xA0;&#xA0;</div>
+            <div class="left value normal text">
+                dfgdgdfg
+            </div>
+            <div class="left label">Linespeed:&#xA0;&#xA0;</div>
+            <div class="left value small">
+                75
+            </div>
+            <div class="left">
+                <div class="normal-font section-one-units">&#xA0;mph</div>
+            </div>
+            <div class="left label">&#xA0;&#xA0;</div>
+            <div class="left value small ls-pull-left">
+                S&amp;C
+            </div>
+            <div class="normal-font section-one-units">S&amp;C or PL</div>
+        </div>
+        <div class="clear section-one-row">
+            <div class="left label">Risk Description:&#xA0;&#xA0;</div>
+            <div class="left value risk-desc text">
+                Mining Subsidence
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section section-two">
+        <div class="section-header bold">Table 5 Values</div>
+        <div class="clear section-two-row bold padding-btm-20">
+            <div class="left">Track Code Condition:&#xA0;&#xA0;</div>
+            <div class="left value narrow track-code text">
+                8
+            </div>
+            <div class="left">Stress Free Temperature:&#xA0;
+                <br>(SFT)&#xA0;&#xA0;</div>
+            <div class="left value small value-border-two"><span class="extra-bold">21 &#xB0;C</span></div>
+        </div>
+        <div class="clear section-two-row">
+            <div id="crt-text" class="left">Refer to table 5 - Critical Rail Temperatures for &quot;standard&quot; CWR track
+                <br> NR/L2/TRK/001/mod14 - Managing track in hot weather
+            </div>
+            <div class="left">
+                <div class="text-center width-70">CRT(W)</div>
+                <div class="left value small text-center crt bold"><span class="value-text">SFT +</span>
+                    <br>
+                    15 &#xB0;C
+                </div>
+            </div>
+            <div class="left">
+                <div class="text-center width-70">CRT(30/60)</div>
+                <div class="left value small text-center crt bold"><span class="value-text">CRT(W) +</span>
+                    <br>
+                    3 &#xB0;C
+                </div>
+            </div>
+            <div class="left">
+                <div class="text-center width-70">CRT(20)</div>
+                <div class="left value small text-center crt bold"><span class="value-text">CRT(W) +</span>
+                    <br>
+                    5 &#xB0;C
+                </div>
+            </div>
+        </div>
+        <div class="clear section-two-row">
+            <div id="dts-text" class="left">Was the DTS used throughout
+                <br> Yes <span class="small-text">(DTS uplift only applicable to Track Condition codes 4 &amp; 8)</span>
+                <br> No
+            </div>
+            <div class="left table-5-num">
+                + 5 &#xB0;C
+                <br>&#xA0;&#xA0;&#xA0;0 &#xB0;C
+            </div>
+            <div id="dts-bracket" class="left"></div>
+            <div id="dts-horizontal-line" class="left"></div>
+            <div id="dts-val" class="left value small value-border-two bold">
+                0 &#xB0;C
+            </div>
+        </div>
+        <div class="clear">
+            <div class="section-header margin-top bold">Table 6 Adustments</div>
+        </div>
+        <div class="clear">
+            <div id="trk-curvate-text" class="left section-two-row">
+                Track Curvature
+                <br> radius over 1500m
+                <br> radius between 1500m and 800m
+                <br> radius between 800m and 400m
+                <br> radius below 400m <span class="small-text">(with lateral resistance and plates fitted)</span>
+                <br> radius below 400m <span class="small-text">(ballast glued)</span>
+                <br> radius below 400m
+            </div>
+            <div class="left table-5-num">
+                &#xA0;&#xA0;0 &#xB0;C
+                <br>
+                <br> &#xA0;-4 &#xB0;C
+                <br> &#xA0;-7 &#xB0;C
+                <br> &#xA0;-7 &#xB0;C
+                <br> &#xA0;-7 &#xB0;C
+                <br> &#xA0;-9 &#xB0;C
+                <br>
+            </div>
+            <div id="trk-curvate-bracket" class="left"></div>
+            <div id="trk-curvate-horizontal-line" class="left"></div>
+            <div class="left">
+                <div id="trk-curvate" class="left value small value-border-two bold">
+                    0 &#xB0;C
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+            <div id="sleeper-spacing-text" class="left section-two-row">
+                Sleeper / Bearing Spacing (per 60ft [18m] length)
+                <br> 24 No.
+                <br> 26 No.
+                <br> 28 No. <span class="small-text">(also applicable to RT60 and NR60 S&amp;C)</span>
+                <br> 28 No. CEN 60 rail and G44 sleepers
+                <br> 30 No.
+                <br>
+            </div>
+            <div class="left table-5-num">
+                &#xA0;&#xA0;-2 &#xB0;C
+                <br> &#xA0;&#xA0;&#xA0;0 &#xB0;C
+                <br> + 2 &#xB0;C
+                <br> + 4 &#xB0;C
+                <br> + 4 &#xB0;C
+                <br>
+            </div>
+            <div id="sleeper-bracket" class="left"></div>
+            <div id="sleeper-horizontal-line" class="left"></div>
+            <div class="left">
+                <div id="sleeper-spacing" class="left value small value-border-two bold">
+                    -2 &#xB0;C
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+            <div id="bearer-type-text" class="left section-two-row">
+                Rail and Sleeper / Bearer type
+                <br> FB on concrete or steel spade ended
+                <br> FB on hardwood or softwood (Plain line)
+                <br> FB on hardwood or softwood (S&amp;C)
+                <br> BH on concrete
+                <br> BH on timber
+                <br><span class="italic">Crimp-ended steel</span>
+            </div>
+            <div class="left table-5-num">
+                &#xA0;&#xA0;&#xA0;0 &#xB0;C
+                <br> &#xA0;&#xA0;-8 &#xB0;C
+                <br> &#xA0;&#xA0;-5 &#xB0;C
+                <br> &#xA0;&#xA0;-5 &#xB0;C
+                <br> &#xA0;&#xA0;-9 &#xB0;C
+                <br> -27 &#xB0;C
+                <br>
+            </div>
+            <div id="bearer-bracket" class="left"></div>
+            <div id="bearer-horizontal-line" class="left"></div>
+            <div class="left">
+                <div id="bearer-type" class="left value small value-border-two bold">
+                    -27 &#xB0;C
+                </div>
+            </div>
+            <div class="left not-to-exceed">
+                <span class="left italic small-text">Not to exceed: </span>
+                <div class="clear">
+                    <div class="left value small medium-text text-center">SFT + 5 &#xB0;C</div>
+                    <div class="left value small medium-text text-center">SFT + 8 &#xB0;C</div>
+                    <div class="left value small medium-text text-center">SFT + 11 &#xB0;C</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+            <div id="train-ops-text" class="left section-two-row">
+                <span class="bold">Other</span>
+                <br> Train Operated Catch points (where not clipped out of use)
+            </div>
+            <div class="left table-5-num">
+                -15 &#xB0;C
+                <br> &#xA0;&#xA0;&#xA0;0 &#xB0;C
+                <br>
+            </div>
+            <div class="left high-output-line"></div>
+            <div class="left">
+                <div id="train-ops" class="left value small value-border-two bold">
+                    -15 &#xB0;C
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+            <div id="trs-text" class="left section-two-row">
+                <span class="bold">High Output TRS Sites only</span>
+                <br> Allowance for compressed joint at D75 cut out
+            </div>
+            <div class="left table-5-num">
+                -5 &#xB0;C
+                <br> &#xA0;0 &#xB0;C
+                <br>
+            </div>
+            <div class="left high-output-line"></div>
+            <div class="left">
+                <div id="trs" class="left value small value-border-two bold">
+                    -5 &#xB0;C
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+            <div id="calc-values-text" class="left section-two-row">
+                <span class="bold">Calculated Values</span>
+                <br> Note that the CRT(W) value shall not exceed the maximum
+                <br> allowable values shown below and values will not be
+                <br> populated unless all questions are answered
+            </div>
+            <div id="calc-values" class="left">
+                <div class="left">
+                    <div class="text-center width-70 medium-text bold">CRT(W)</div>
+                    <div class="value small value-border-two"><span class="bold">-13 &#xB0;C</span></div>
+                    <div class="text-center width-70 small-text">(Total of boxes above)</div>
+                </div>
+                <div class="left">
+                    <div class="text-center width-70 medium-text bold">CRT(30/60)</div>
+                    <div class="value small value-border-two"><span class="bold">-10 &#xB0;C</span></div>
+                    <div class="text-center width-70 small-text">=CRT(W)+
+                        3
+                    </div>
+                </div>
+                <div class="left">
+                    <div class="text-center width-70 medium-text bold">CRT(20)</div>
+                    <div class="value small value-border-two"><span class="bold">-8 &#xB0;C</span></div>
+                    <div class="text-center width-70 small-text">=CRT(W)+
+                        5
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section section-three">
+        <div class="bold section-header">Maximum allowable CRT(W) values</div>
+        <div class="bold section-header padding-30">Other Considerations (Table 6 Notes (2))</div>
+        <div class="left padding-30">
+            <div>
+                <div id="other-cons-text" class="left">Do any of the following exist within the CRT assessed mileage: Unconsolidated lineside drainage, Active subsidence, Misalignments or sites of known rail creep?</div>
+                <div id="other-cons-value1" class="left text-center">
+                    <div>Yes / No</div>
+                    <div class=" value small value-border-two bold">
+                        Yes
+                    </div>
+                </div>
+                <div id="other-cons-value2-text" class="left">If Yes, SFT + 15&#xB0;C =</div>
+                <div id="other-cons-value2" class="left value small value-border-two bold">
+                    36 &#xB0;C
+                </div>
+            </div>
+            <div>
+                <div class="left">
+                    <div id="sft-32-text" class="left">For sites with Track Condition Code 8 ONLY:
+                        <br>(Subject to Max of SFT + 32&#xB0;C)
+                    </div>
+                    <div id="sft32" class="left">SFT + 32&#xB0;C =</div>
+                    <div id="sft-32-val" class="left value small value-border-two">
+                        53 &#xB0;C
+                    </div>
+                    <div id="sft-text" class="left">(CRT Max(W) is the lowest calculated value)</div>
+                </div>
+            </div>
+        </div>
+        <div id="max-crt-container" class="right bold">
+            <div class="text-center">
+                Therefore
+                <br> Max CRT (W)
+            </div>
+            <div id="max-crt" class="text-center value small">
+                26 &#xB0;C
+                <br><span class="value-text">(SFT + 5)</span></div>
+        </div>
+    </div>
+
+    <div class="pdf-page-splitter"></div>
+
+    <div class="form-section section-four">
+        <div class="section-header"><span class="bold">Adjustment Switch Details</span> (if applicable)</div>
+        <div class="padding-30 padding-btm-28">
+            <div class="left adjust-switch-label">Adjustment Switch 1.</div>
+            <div class="left location-val-m">
+                <div class="left">
+                    Location:&#xA0;
+                </div>
+                <div class="left value location">
+                    
+                </div>
+                <div class="left text-bottom">&#xA0;m</div>
+            </div>
+            <div class="left location-val-yds">
+                <div class="left value small">
+                    
+                </div>
+                <div class="left text-bottom">&#xA0;yds</div>
+            </div>
+            <div class="left">
+                Gap:&#xA0;
+            </div>
+            <div class="left value small">
+                75
+            </div>
+            <div class="left text-bottom">&#xA0;mm
+            </div>
+        </div>
+        <div class="clear padding-30">
+            <div class="left adjust-switch-label">Adjustment Switch 2.</div>
+            <div class="left location-val-m">
+                <div class="left">
+                    Location:&#xA0;</div>
+                <div class="left value location">
+                    
+                </div>
+                <div class="left text-bottom">&#xA0;m</div>
+            </div>
+            <div class="left location-val-yds">
+                <div class="left value small">
+                    
+                </div>
+                <div class="left text-bottom">&#xA0;yds
+                </div>
+            </div>
+            <div class="left">
+                Gap:&#xA0;</div>
+            <div class="left value small">
+                75
+            </div>
+            <div class="left text-bottom">&#xA0;mm</div>
+        </div>
+    </div>
+
+    <div class="form-section bold section-five">
+        <div class="padding-btm-28">
+            <div class="left section-five-left-label">CRT Assessment date:&#xA0;</div>
+            <div class="left value section-five-val-left">
+                30-Jan-20
+            </div>
+            <div class="left section-five-right-label">CRT Assessment calculated by:&#xA0;</div>
+            <div class="left value normal-no-margin text">
+                Mr Test 3
+            </div>
+        </div>
+        <div class="clear padding-btm-28">
+            <div class="left section-five-left-label">Ballast Disturbance date:&#xA0;</div>
+            <div class="left value section-five-val-left">
+                30-Jan-20
+            </div>
+            <div class="left section-five-right-label">Position:&#xA0;</div>
+            <div class="left value normal-no-margin text">
+                dfgdfgfdg
+            </div>
+        </div>
+        
+        <div class="clear padding-btm-28">
+            <div class="left section-five-left-label">Equivalent Million Gross Tonnes&#xA0; Per Annum (EMGTPA):&#xA0;</div>
+            <div class="left value section-five-val-left">
+                &lt;2
+            </div>
+            <div class="left section-five-right-label last">Calculated Weekly Increment&#xA0;
+                <br>(only applicable to condition 8):&#xA0;</div>
+            <div class="left value section-five-val-left">
+                0.5 &#xB0;C
+            </div>
+            <p class="perWeek">&#xA0; per week</p>
+        </div>
+        
+    </div>
+
+    <div class="clear form-section bold section-five">
+        <div class="margin-btm-10">Instruction to archive the above site in the CRT Register</div>
+        <div class="padding-btm-28">
+            <div class="left section-five-left-label">Removal date :&#xA0;</div>
+            <div class="left value section-five-val-left"></div>
+            <div class="left section-five-right-label">Archival authorised by :&#xA0;</div>
+            <div class="left value normal-no-margin text"></div>
+        </div>
+        <div class="clear padding-btm-28">
+            <div class="left section-five-left-label">Reason for Archival :&#xA0;</div>
+            <div class="left value section-five-val-left height-40"></div>
+            <div class="left section-five-right-label">Position:&#xA0;</div>
+            <div class="left value normal-no-margin text"></div>
+        </div>
+        <div class="right padding-btm-28 margin-right-38">
+            <div class="left section-five-right-label last">Signature :&#xA0;
+                <br>(Wet ink)&#xA0;</div>
+            <div class="left value normal-no-margin">
+            </div>
+        </div>
+    </div>
+
+    <div class="clear footer lastRow">
+        <div class="left">QMS Reference TRK / CON / 00004 V06</div>
+        <div class="right">IMS No. IP390</div>
+    </div>
+
+    
+
+</div>
+
+</body>
+
+</html>
+ 
+
+puppeteer  undefined
+ no format 
+file: /opt/app-root/src/pdf_cache//1581643939994.pdf
+pdf.clean: 1581643939994.pdf
+temp.remove: /opt/app-root/src/pdf_cache//1581643939994.pdf
+temp.remove: /opt/app-root/src/public//1581643937896_900.70707403153861.html
